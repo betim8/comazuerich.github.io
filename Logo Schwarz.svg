@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" version="1.1" width="297.638" height="297.638" viewBox="0 0 297.638 297.638">
+<defs>
+<clipPath id="clip_1">
+<path transform="matrix(1,0,0,-1,0,297.638)" d="M0 0H297.638V297.638H0Z"/>
+</clipPath>
+<clipPath id="clip_2">
+<path transform="matrix(1,0,0,-1,0,297.638)" d="M0 0H297.638V297.638H0Z"/>
+</clipPath>
+</defs>
+<g clip-path="url(#clip_1)">
+<text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 297.638)" font-size="150" font-family="BagelFat-Fat" font-weight="bold"><tspan y="-51.379" x="19.666 156.466">MA</tspan></text>
+</g>
+<text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 297.638)" font-size="19" font-family="ZXHQLF+Arimo-Bold" font-weight="bold"><tspan y="-8.7841" x="91.9299 107.4529 122.97591 135.32592 143.45792 151.58992 165.00392 178.41793 191.83193">EST. 2025</tspan></text>
+<g clip-path="url(#clip_2)">
+<text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 297.638)" font-size="150" font-family="BagelFat-Fat" font-weight="bold"><tspan y="-177.5207" x="22.7766 127.026599">CO</tspan></text>
+</g>
+</svg>
