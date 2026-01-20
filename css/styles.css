@@ -2923,6 +2923,12 @@ img.u-pull-left {
     padding : 0;
 }
 
+.small-site-subtitle {
+    font-family: var(--font-1);
+    font-size: var(--text-xs);
+    text-align: center;
+}
+
 .s-header__branding a {
     margin  : 0;
     padding : 0;
@@ -3245,7 +3251,6 @@ img.u-pull-left {
     font-size      : var(--text-sm);
     font-weight    : 400;
     color          : white;
-    margin-top     : -4rem;
 }
 
 /* --------------------------------------------------------------------
