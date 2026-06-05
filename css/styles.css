@@ -3649,14 +3649,24 @@ img.u-pull-left {
 
 
 /* ===================================================================
- * # WORKS
+ * # MENU
  *
  *
  * ------------------------------------------------------------------- */
-.s-works {
+.s-menu {
     padding-top      : calc(6 * var(--space));
     padding-bottom   : calc(5.5 * var(--space));
     background-color : white;
+}
+
+/* ===================================================================
+ * # Creations
+ *
+ *
+ * ------------------------------------------------------------------- */
+.s-creation {
+    padding-top      : calc(6 * var(--space));
+    padding-bottom   : calc(5.5 * var(--space));
 }
 
 /* ------------------------------------------------------------------- 
@@ -3685,52 +3695,12 @@ img.u-pull-left {
 
 /* thumbnail
  */
-.folio-item__thumb a {
+.folio-item__thumb {
     display  : block;
     position : relative;
     overflow : hidden;
 }
 
-.folio-item__thumb a::before {
-    z-index          : 1;
-    content          : "";
-    display          : block;
-    background-color : rgba(0, 0, 0, 0.5);
-    opacity          : 0;
-    visibility       : hidden;
-    position         : absolute;
-    top              : 0;
-    left             : 0;
-    right            : 0;
-    bottom           : 0;
-    width            : 100%;
-    height           : 100%;
-    transition       : all, .5s;
-}
-
-.folio-item__thumb a::after {
-    z-index     : 1;
-    content     : "+";
-    text-align  : center;
-    font-family : var(--font-1);
-    font-weight : 300;
-    font-size   : 3rem;
-    color       : white;
-    display     : block;
-    height      : 3.2rem;
-    width       : 3.2rem;
-    line-height : 3.2rem;
-    margin-left : -1.6rem;
-    margin-top  : -3rem;
-    text-align  : center;
-    opacity     : 0;
-    visibility  : hidden;
-    transform   : scale(0.5);
-    transition  : all, 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
-    position    : absolute;
-    left        : 50%;
-    top         : 50%;
-}
 
 .folio-item__thumb img {
     vertical-align : bottom;
@@ -3766,22 +3736,6 @@ img.u-pull-left {
     color : var(--color-1);
 }
 
-/* on hover
- */
-.folio-item__thumb:hover .folio-item__thumb-link img {
-    transform : scale(1.05);
-}
-
-.folio-item__thumb:hover .folio-item__thumb-link::before {
-    opacity    : 1;
-    visibility : visible;
-}
-
-.folio-item__thumb:hover .folio-item__thumb-link::after {
-    opacity    : 1;
-    visibility : visible;
-    transform  : scale(1);
-}
 
 /* ------------------------------------------------------------------- 
  * ## testimonial slider
@@ -3974,7 +3928,12 @@ img.u-pull-left {
 }
 
 @media screen and (max-width: 600px) {
-    .s-works {
+    .s-menu {
+        padding-top    : var(--vspace-5);
+        padding-bottom : var(--vspace-4_5);
+    }
+
+    .s-creation {
         padding-top    : var(--vspace-5);
         padding-bottom : var(--vspace-4_5);
     }
