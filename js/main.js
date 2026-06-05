@@ -198,6 +198,95 @@
     };  // end ssPhotoSwipe
 
 
+   /* simple slideshow
+    * ------------------------------------------------------ */
+    const ssSlideshow = function() {
+
+        const slideshow = document.querySelector('.slideshow');
+        if (!slideshow) return;
+
+        const slideshowImage = slideshow.querySelector('.slideshow__image');
+        const prevButton = slideshow.querySelector('.slideshow__button--prev');
+        const nextButton = slideshow.querySelector('.slideshow__button--next');
+
+        const images = [
+            'images/menu/menu1.jpg',
+            'images/menu/menu2.jpg',
+            'images/menu/menu3.jpg',
+            'images/menu/menu4.jpg'
+        ];
+
+        let currentIndex = 0;
+
+        const updateSlide = function() {
+            slideshowImage.src = images[currentIndex];
+            slideshowImage.alt = 'Menu image ' + (currentIndex + 1);
+        };
+
+        prevButton.addEventListener('click', function() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            updateSlide();
+        });
+
+        nextButton.addEventListener('click', function() {
+            currentIndex = (currentIndex + 1) % images.length;
+            updateSlide();
+        });
+
+        images.forEach(function(src) {
+            const img = new Image();
+            img.src = src;
+        });
+
+    }; // end ssSlideshow
+
+
+   /* intro background image rotator
+    * ------------------------------------------------------ */
+    const ssIntroBackgroundRotation = function() {
+
+        const introBg = document.querySelector('.s-intro__bg');
+        if (!introBg) return;
+
+        const images = [
+            'images/beans.jpg',
+            'images/matcha_brush.jpg',
+            'images/matcha.jpg'
+        ];
+
+        const layers = [document.createElement('div'), document.createElement('div')];
+        layers.forEach(function(layer) {
+            layer.className = 's-intro__bg__layer';
+            introBg.appendChild(layer);
+        });
+
+        let currentIndex = 0;
+        let currentLayer = 0;
+
+        images.forEach(function(src) {
+            const img = new Image();
+            img.src = src;
+        });
+
+        layers[0].style.backgroundImage = 'url("' + images[0] + '")';
+        layers[0].classList.add('is-visible');
+        layers[1].style.backgroundImage = 'url("' + images[1] + '")';
+
+        setInterval(function() {
+            const nextIndex = (currentIndex + 1) % images.length;
+            const nextLayer = 1 - currentLayer;
+
+            layers[nextLayer].style.backgroundImage = 'url("' + images[nextIndex] + '")';
+            layers[nextLayer].classList.add('is-visible');
+            layers[currentLayer].classList.remove('is-visible');
+
+            currentIndex = nextIndex;
+            currentLayer = nextLayer;
+        }, 7000);
+
+    }; // end ssIntroBackgroundRotation
+
+
 
    /* animate elements if in viewport
     * ------------------------------------------------------ */
@@ -366,6 +455,8 @@
         ssPreloader();
         ssMobileMenu();
         ssStickyHeader();
+        ssSlideshow();
+        ssIntroBackgroundRotation();
         ssPhotoswipe();
         ssAnimateOnScroll();
         ssSwiper();

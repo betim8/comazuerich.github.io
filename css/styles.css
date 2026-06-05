@@ -92,20 +92,20 @@
     /* color-1(#5F9295)
      * color-2(#2D2327)
      */
-    --color-1                      : hsla(183, 22%, 48%, 1);
-    --color-2                      : hsla(336, 13%, 16%, 1);
+    --color-1                      : #174023;
+    --color-2                      : #3d2500;
 
     /* theme color variations
      */
-    --color-1-lighter              : hsla(183, 22%, 68%, 1);
-    --color-1-light                : hsla(183, 22%, 58%, 1);
-    --color-1-dark                 : hsla(183, 22%, 38%, 1);
-    --color-1-darker               : hsla(183, 22%, 28%, 1);
+    --color-1-lighter              : hsl(138, 47%, 28%);
+    --color-1-light                : hsla(183, 22%, 25%, 1);
+    --color-1-dark                 : hsla(183, 22%, 20%, 1);
+    --color-1-darker               : hsla(183, 22%, 15%, 1);
 
-    --color-2-lighter              : hsla(336, 13%, 36%, 1);
-    --color-2-light                : hsla(336, 13%, 26%, 1);
-    --color-2-dark                 : hsla(336, 13%, 10%, 1);
-    --color-2-darker               : hsla(336, 13%, 5%, 1);
+    --color-2-lighter              : hsla(36, 100%, 16%, 1);
+    --color-2-light                : hsla(336, 13%, 13%, 1);
+    --color-2-dark                 : #1d1619;
+    --color-2-darker               : #171214;
 
     /* feedback colors
      * color-error(#ffd1d2), color-success(#c8e675), 
@@ -149,7 +149,7 @@
 
     /* text
      */
-    --color-text                   : var(--color-gray-17);
+    --color-text                   : var(--color-2);
     --color-text-dark              : var(--color-gray-19);
     --color-text-light             : var(--color-gray-12);
     --color-placeholder            : var(--color-gray-12);
@@ -162,7 +162,7 @@
     --color-btn-hover-text         : var(--color-text);
     --color-btn-primary            : var(--color-1-dark);
     --color-btn-primary-text       : var(--color-white);
-    --color-btn-primary-hover      : var(--color-text-dark);
+    --color-btn-primary-hover      : var(--color-2);
     --color-btn-primary-hover-text : var(--color-white);
     --color-btn-stroke             : var(--color-1-dark);
     --color-btn-stroke-text        : var(--color-1-darker);
@@ -171,13 +171,13 @@
 
     /* preloader
      */
-    --color-preloader-bg           : #CFE6E8;
+    --color-preloader-bg           : #F5EBE5;
     --color-loader                 : var(--color-text-dark);
     --color-loader-light           : var(--color-1-lighter);
 
     /* others
      */
-    --color-body                   : #CFE6E8;
+    --color-body                   : #F5EBE5;
     --color-border                 : rgba(0, 0, 0, .08);
     --border-radius                : 3px;
 }
@@ -2745,6 +2745,17 @@ td:last-child {
     margin-bottom  : var(--vspace-0_5);
 }
 
+.text-bold-special {
+    font-family            : var(--font-2);
+    font-weight            : 400;
+    color                  : var(--color-text-dark);
+    font-variant-ligatures : common-ligatures;
+    text-rendering         : optimizeLegibility;
+    font-size: var(--text-lg);
+}
+
+.
+
 /* ------------------------------------------------------------------- 
  * ## media classes
  * ------------------------------------------------------------------- */
@@ -2912,7 +2923,7 @@ img.u-pull-left {
     font-size      : 3rem;
     line-height    : 1;
     letter-spacing : -0.03em;
-    transform      : translateY(-50%);
+    transform      : translateY(-30%);
     position       : absolute;
     top            : 50%;
     left           : 3.6rem;
@@ -2921,6 +2932,18 @@ img.u-pull-left {
 .s-header__branding .site-title {
     margin  : 0;
     padding : 0;
+}
+
+.s-header__branding .site-logo-link {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+.s-header__branding .site-logo {
+    max-width: 6rem;
+    height: auto;
+    display: block;
 }
 
 .small-site-subtitle {
@@ -3001,7 +3024,7 @@ img.u-pull-left {
 }
 
 .s-header__social svg path {
-    fill : var(--color-text-dark);
+    fill : var(--color-2);
 }
 
 /* --------------------------------------------------------------------
@@ -3246,6 +3269,14 @@ img.u-pull-left {
     color            : white;
 }
 
+.s-intro__logo {
+    max-width: min(40rem, 90%);
+    width: 100%;
+    height: auto;
+    display: inline-block;
+    margin-top: -17rem;
+}
+
 .sub-intro-text {
     font-family    : var(--font-1);
     font-size      : var(--text-sm);
@@ -3265,6 +3296,22 @@ img.u-pull-left {
     background-position : center;
     background-size     : cover;
     position            : relative;
+    overflow            : hidden;
+}
+
+.s-intro__bg__layer {
+    position           : absolute;
+    inset              : 0;
+    background-repeat  : no-repeat;
+    background-position: center;
+    background-size    : cover;
+    opacity            : 0;
+    transition         : opacity 0.8s ease;
+    pointer-events     : none;
+}
+
+.s-intro__bg__layer.is-visible {
+    opacity: 1;
 }
 
 .s-intro__bg::after {
@@ -3318,6 +3365,15 @@ img.u-pull-left {
     .s-intro {
         padding-top : calc(7 * var(--space));
     }
+
+        .s-intro__text {
+        top : 2rem;
+    }
+
+    .s-intro__logo {
+        margin-top: -15rem;
+        max-width: min(30rem, 90%);
+    }
 }
 
 @media screen and (max-width: 900px) {
@@ -3327,6 +3383,15 @@ img.u-pull-left {
 
     .s-intro__text-huge {
         margin-bottom : var(--vspace-1);
+    }
+
+    .s-intro__text {
+        top : 2rem;
+    }
+
+    .s-intro__logo {
+        margin-top: -15rem;
+        max-width: min(30rem, 90%);
     }
 }
 
@@ -3338,9 +3403,28 @@ img.u-pull-left {
     .s-intro__text-huge {
         margin-bottom : var(--vspace-0_5);
     }
+
+    .s-intro__text {
+        top : 2rem;
+    }
+
+    .s-intro__logo {
+        margin-top: -15rem;
+        max-width: min(30rem, 90%);
+    }
 }
 
 @media screen and (max-width: 600px) {
+
+    .s-intro__text {
+        top : 2rem;
+    }
+
+    .s-intro__logo {
+        margin-top: -11rem;
+        max-width: min(21rem, 90%);
+    }
+
     .s-intro__text h3 {
         font-size : 4.6vw;
     }
@@ -3359,8 +3443,8 @@ img.u-pull-left {
     --timeline-top-adjust          : calc(var(--subtitle-line-height) / 2);
     --timeline-vertical-border-pos : 8px;
 
-    padding-top                    : var(--vspace-5);
-    padding-bottom                 : var(--vspace-3);
+    padding-top                    : var(--vspace-1);
+    padding-bottom                 : var(--vspace-1);
 }
 
 .s-about__block {
@@ -3656,7 +3740,6 @@ img.u-pull-left {
 .s-menu {
     padding-top      : calc(6 * var(--space));
     padding-bottom   : calc(5.5 * var(--space));
-    background-color : white;
 }
 
 /* ===================================================================
@@ -4137,5 +4220,76 @@ img.u-pull-left {
     .ss-go-top svg {
         height : 1.6rem;
         width  : 1.6rem;
+    }
+}
+
+.slideshow {
+    width: 100%;
+    max-width: 900px;
+    margin: var(--vspace-2) auto 0;
+}
+
+.slideshow__frame {
+    position: relative;
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: calc(var(--border-radius) * 2);
+    overflow: hidden;
+    background: var(--color-white);
+}
+
+.slideshow__image {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    margin-bottom: 0;
+}
+
+.slideshow__button {
+    position: absolute;
+    top: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
+    height: 4rem;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: rgba(23, 64, 35, 0.85);
+    color: var(--color-btn-primary-text);
+    font-size: 2.4rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: background 0.25s ease, transform 0.2s ease;
+    transform: translateY(-50%);
+    z-index: 2;
+}
+
+.slideshow__button--prev {
+    left: 1rem;
+}
+
+.slideshow__button--next {
+    right: 1rem;
+}
+
+.slideshow__button:hover,
+.slideshow__button:focus {
+    background: rgba(23, 64, 35, 1);
+    outline: none;
+    transform: translateY(-50%) scale(1.04);
+}
+
+@media screen and (max-width: 700px) {
+    .slideshow {
+        gap: 0.8rem;
+    }
+
+    .slideshow__button {
+        min-width: 3.6rem;
+        min-height: 3.6rem;
+        font-size: 2rem;
     }
 }
