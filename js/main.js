@@ -466,4 +466,73 @@
 
     })();
 
+    /* contact form modal
+    * ------------------------------------------------------ */
+    const ssContactForm = function() {
+
+        const openButton = document.querySelector('#open-contact-form');
+        const modal = document.querySelector('#contact-modal');
+        const closeButton = modal ? modal.querySelector('.contact-form-modal__close') : null;
+        const overlay = modal ? modal.querySelector('.contact-form-modal__overlay') : null;
+
+        if (!(openButton && modal && closeButton && overlay)) return;
+
+        const openModal = function() {
+            modal.classList.add('is-visible');
+            modal.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+        };
+
+        const closeModal = function() {
+            modal.classList.remove('is-visible');
+            modal.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+        };
+
+        openButton.addEventListener('click', function() {
+            openModal();
+        });
+
+        closeButton.addEventListener('click', function() {
+            closeModal();
+        });
+
+        overlay.addEventListener('click', function(e) {
+            if (e.target === overlay) {
+                closeModal();
+            }
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal.classList.contains('is-visible')) {
+                closeModal();
+            }
+        });
+
+        const form = document.querySelector('#contact-form');
+
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                const name = document.querySelector('#contact-name').value.trim();
+                const email = document.querySelector('#contact-email').value.trim();
+                const message = document.querySelector('#contact-message').value.trim();
+                const recipient = 'betim.kabashi@hotmail.com';
+                const subject = encodeURIComponent('Kontaktanfrage von CoMa');
+                const body = encodeURIComponent(
+                    'Name: ' + name + '\n' +
+                    'E-Mail: ' + email + '\n\n' +
+                    'Nachricht:\n' + message
+                );
+
+                window.location.href = 'mailto:' + recipient + '?subject=' + subject + '&body=' + body;
+                closeModal();
+            });
+        }
+
+    };
+
+    ssContactForm();
+
 })(document.documentElement);

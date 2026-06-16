@@ -2212,6 +2212,103 @@ button.btn--pill {
 }
 
 
+.contact-form-modal {
+    position: fixed;
+    inset: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.65);
+    z-index: 1000;
+    padding: 2rem;
+}
+
+.contact-form-modal.is-visible {
+    display: flex;
+}
+
+.contact-form-modal__overlay {
+    position: relative;
+    width: 100%;
+    max-width: 560px;
+}
+
+.contact-form-modal__content {
+    position: relative;
+    background: var(--color-white);
+    border-radius: 16px;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.25);
+    padding: 2rem;
+    color: var(--color-text-dark);
+}
+
+.contact-form-modal__close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    border: none;
+    background: transparent;
+    color: var(--color-text-dark);
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.contact-form-modal__header h2 {
+    margin: 0 0 0.5rem;
+    font-size: var(--text-xl);
+}
+
+.contact-form-modal__header p {
+    margin: 0 1.5rem 1.5rem 0;
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+.contact-form-modal__form label {
+    display: block;
+    margin-bottom: 0.75rem;
+    font-weight: 700;
+    color: var(--color-text-dark);
+}
+
+.contact-form-modal__form input,
+.contact-form-modal__form textarea {
+    width: 100%;
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    padding: 1rem 1rem;
+    margin-bottom: 1.25rem;
+    font-family: var(--font-1);
+    font-size: var(--text-sm);
+    color: var(--color-text-dark);
+    background: var(--color-white);
+}
+
+.contact-form-modal__form textarea {
+    resize: vertical;
+    min-height: 140px;
+}
+
+.contact-form-modal__form input:focus,
+.contact-form-modal__form textarea:focus {
+    outline: none;
+    border-color: var(--color-1);
+}
+
+@media screen and (max-width: 600px) {
+    .contact-form-modal {
+        align-items: flex-end;
+        padding: 1rem;
+    }
+
+    .contact-form-modal__content {
+        width: 100%;
+        padding: 1.5rem;
+        border-radius: 12px;
+    }
+}
+
 
 /* ===================================================================
  * # TABLE
@@ -3291,7 +3388,6 @@ img.u-pull-left {
     aspect-ratio        : 1/1;
     width               : 100%;
     background-color    : var(--color-gray-4);
-    background-image    : url(../images/coma_sample.png);
     background-repeat   : no-repeat;
     background-position : center;
     background-size     : cover;
@@ -4225,13 +4321,14 @@ img.u-pull-left {
 
 .slideshow {
     width: 100%;
-    max-width: 900px;
+    max-width: 760px;
     margin: var(--vspace-2) auto 0;
 }
 
 .slideshow__frame {
     position: relative;
     width: 100%;
+    max-height: 70vh;
     border: 1px solid rgba(0, 0, 0, 0.08);
     border-radius: calc(var(--border-radius) * 2);
     overflow: hidden;
@@ -4291,5 +4388,17 @@ img.u-pull-left {
         min-width: 3.6rem;
         min-height: 3.6rem;
         font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .slideshow {
+        max-width: 680px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .slideshow {
+        max-width: 620px;
     }
 }
