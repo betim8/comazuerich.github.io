@@ -3543,10 +3543,6 @@ img.u-pull-left {
     padding-bottom                 : var(--vspace-1);
 }
 
-.s-about__block {
-    margin-bottom : var(--vspace-2);
-}
-
 .s-about__timeline {
     padding-top : var(--vspace-1_5);
 }
@@ -4328,7 +4324,6 @@ img.u-pull-left {
 .slideshow__frame {
     position: relative;
     width: 100%;
-    max-height: 70vh;
     border: 1px solid rgba(0, 0, 0, 0.08);
     border-radius: calc(var(--border-radius) * 2);
     overflow: hidden;
