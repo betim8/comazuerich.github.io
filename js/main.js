@@ -210,10 +210,10 @@
         const nextButton = slideshow.querySelector('.slideshow__button--next');
 
         const images = [
-            'images/menu/menu1.jpg',
-            'images/menu/menu2.jpg',
-            'images/menu/menu3.jpg',
-            'images/menu/menu4.jpg'
+            'images/menu/menu1.png',
+            'images/menu/menu2.png',
+            'images/menu/menu3.png',
+            'images/menu/menu4.png'
         ];
 
         let currentIndex = 0;
@@ -249,9 +249,9 @@
         if (!introBg) return;
 
         const images = [
-            'images/beans.jpg',
-            'images/matcha_brush.jpg',
-            'images/matcha.jpg'
+            'images/diashow/coffee.jpg',
+            'images/diashow/matcha_brush.jpg',
+            'images/diashow/machine.jpg'
         ];
 
         const layers = [document.createElement('div'), document.createElement('div')];

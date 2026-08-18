@@ -9,10 +9,10 @@
 </clipPath>
 </defs>
 <g clip-path="url(#clip_1)">
-<text fill="#F5EBE5" xml:space="preserve" transform="matrix(1 0 -0 1 0 297.638)" font-size="150" font-family="Bagel Fat One" font-weight="bold"><tspan y="-51.379" x="19.666 156.466">MA</tspan></text>
+<text fill="#F5EBE5" xml:space="preserve" transform="matrix(1 0 -0 1 0 297.638)" font-size="150" font-family="Bagel Fat One" font-weight="bold" text-anchor="middle" letter-spacing="10.0px"><tspan y="-51.379" x="157.0">MA</tspan></text>
 </g>
-<text fill="#F5EBE5" xml:space="preserve" transform="matrix(1 0 -0 1 0 297.638)" font-size="19" font-family="Arimo" font-weight="bold"><tspan y="-8.7841" x="91.9299 107.4529 122.97591 135.32592 143.45792 151.58992 165.00392 178.41793 191.83193">EST. 2025</tspan></text>
+<text fill="#F5EBE5" xml:space="preserve" transform="matrix(1 0 -0 1 0 297.638)" font-size="19" font-family="Arimo" font-weight="bold" text-anchor="middle"><tspan y="-8.7841" x="148.819">EST. 2025</tspan></text>
 <g clip-path="url(#clip_2)">
-<text fill="#3d2500" xml:space="preserve" transform="matrix(1 0 -0 1 0 297.638)" font-size="150" font-family="Bagel Fat One" font-weight="bold"><tspan y="-177.5207" x="22.7766 127.026599">CO</tspan></text>
+<text fill="#3d2500" xml:space="preserve" transform="matrix(1 0 -0 1 0 297.638)" font-size="150" font-family="Bagel Fat One" font-weight="bold" text-anchor="middle" letter-spacing="10.0px"><tspan y="-177.5207" x="152.0">CO</tspan></text>
 </g>
 </svg>
