@@ -251,7 +251,8 @@
         const images = [
             'images/diashow/coffee.jpg',
             'images/diashow/matcha_brush.jpg',
-            'images/diashow/machine.jpg'
+            'images/diashow/machine.jpg',
+            'images/diashow/bread.jpg'
         ];
 
         const layers = [document.createElement('div'), document.createElement('div')];
