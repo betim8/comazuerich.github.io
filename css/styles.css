@@ -4152,6 +4152,7 @@ img.u-pull-left {
 }
 
 .s-shop__list {
+    justify-content : center;
     margin-top : var(--vspace-1_5);
     row-gap    : var(--vspace-2);
 }
